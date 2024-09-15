@@ -242,6 +242,7 @@ like
 * `sandbox` 属性可以限制嵌入文档的能力。
 * `border: none;` 可以去掉边框。
 * `allowfullscreen` 属性可以让嵌入文档全屏显示。
+* 用iframe嵌入视频等时要注意URL前有无`https：`否则无法正常显示（至少B站是这样）
 ## 矢量图形
 * `<svg>` 元素用于在 HTML 文档中插入矢量图形。
 
