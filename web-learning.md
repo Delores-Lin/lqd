@@ -256,6 +256,82 @@ like
 * `<source> `元素包含一个 media 属性，这一属性包含一个媒体条件，这些条件决定哪张图片会显示——第一个条件为真的图片会显示。
 * `srcset` 属性包含要显示图片的路径。
 * 在任何情况下，你都必须紧贴着` </picture>` 前面提供一个`<img> `元素以及它的 `src` 和 `alt` 属性，否则不会有图片显示。
+* `<td>`元素创建单元格.
+* `<tr></tr>`元素创建一行。
+## 表格
+* `<table></table>`中包含表格的所有内容，添加在HTML的`<body>`中。
+* `<tr></tr>`元素创建一行。
+* `<td></td>`元素创建单元格。
+* `<th></th>`元素创建表头。
+* 可以在每一个`<td>``<th>`元素中用style属性来设置单元格的样式。
+* 使用 `<col>`可以定义表格的列的样式，对于不需要采取任何样式的列也需要添加一个空的`<col>`元素,不然后面的样式会应用在前一列上。
+* 通过`<span>`可以将样式应用到多列。
+* `<col>`必须包含在`<colgroup>`元素中，`<colgroup>`元素必须包含在`<table>`元素中。
+* `<colspan>`属性设置单元格横跨的列数。
+* `<rowspan>`属性设置单元格纵向跨的行数。   
+* `<caption>`元素用来为表格添加标题。
+* `<thead> `元素必须包住表格中作为表头的部分。一般是第一行，往往都是每列的标题，但是不是每种情况都是这样的。如果你使用了` <col>/<colgroup> `元素，那么 `<thead> `元素就需要放在它们的下面。
+* `<tfoot>` 元素需要包住表格中作为表脚的部分。一般是最后一行，往往是对前面所有行的总结，比如，你可以按照预想的方式将`<tfoot>`放在表格的底部，或者就放在 `<thead>` 的下面。(浏览器仍将它呈现在表格的底部)
+* `<tbody> `元素需要包住表格内容中不在表头或表尾的其他部分。它可以出现在表头的下方，或者有时出现在表脚下方，这取决于你如何安排它。
+* `<scope>`属性可以设置表头的作用范围。可以添加在 <th> 元素中，以告诉屏幕阅读器该表头的类型——它是所在行的表头，还是所在列的表头。`<th scope="row">` 告诉屏幕阅读器这是一个行的表头。`<th scope="col">` 告诉屏幕阅读器这是一个列的表头。
+* `<id>` 和`<headers>`属性可以用来创建表格的关联。
+  * 为每个 <th> 元素添加一个唯一的 id 。
+  * 为每个 <td> 元素添加一个 headers 属性。每个单元格的 headers 属性需要包含它从属于的所有标题的 id，之间用空格分隔开。
+
+<samp>
+    <body>
+    <h1>My spending record</h1>
+    <table>
+        <thead>
+        <caption>How I chose to spend my money</caption>
+        </thead>
+        <tr>
+            <th scope="col">Purchase</th>
+            <th scope="col">Location</th>
+            <th scope="col">Date</th>
+            <th scope="col">Evaluation</th>
+            <th scope="col">Cost (€)</th>
+        </tr>
+        <tfoot>
+        <tr>
+            <td colspan="4">SUM</td>
+            <td>118</td>
+        </tr>
+        </tfoot>
+        <tr>
+            <th scope="row">Haircut</th>
+            <td>Hairdresser</td>
+            <td>12/09</td>
+            <td>Great idea</td>
+            <td>30</td>
+        </tr>
+        <tr>
+            <td id="lassagna">Lasagna</td>
+            <td headers="location lassagna">Restaurant</td>
+            <td headers="date lassagna">12/09</td>
+            <td headers="evaluation lasagna">Regrets</td>
+            <td headder="cost lassagna">18</td>
+        </tr>
+        <tr>
+            <td scope="row">Shoes</td>
+            <td>Shoeshop</td>
+            <td>13/09</td>
+            <td>Big regrets</td>
+            <td>65</td>
+        </tr>
+        <tr>
+            <tds cope="row">Toothpaste</td>
+            <td>Supermarket</td>
+            <td>13/09</td>
+            <td>Good</td>
+            <td>5</td>
+        </tr>
+    </table>
+
+</body>
+
+</html>
+</samp>
 
 ## css属性
 * `padding`（内边距）：是指内容周围的空间。在下面的例子中，它是段落文本周围的空间。  
