@@ -85,6 +85,7 @@
 * `indexof`方法可以查找元素的索引，如果元素不存在，则返回`-1`。  
   like`console.log(list.indexOf(3));`
 * `includes`方法可以判断列表中是否包含某个元素，如果包含，则返回`true`，否则返回`false`.用法同上。其不进行强制类型转换。
+* `concat()`可以用来合并多个列表，返回一个新的列表。例如：`const newlist = list1.concat(list2, list3);`
 ## Object
 * 对象（Object）是一种数据结构，可以用来存储一组键值对。
   对象的两种创建方法：

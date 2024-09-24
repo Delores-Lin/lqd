@@ -196,4 +196,43 @@ h1 ~ p {
   *  width 和 height 属性不起作用。
   *  内边距、外边距和边框会被应用但不会将其他元素从当前盒子周围“推开”。
   *  水平方向的内边距、外边距和边框会把内容和其他元素分开。
-* 在行内元素中用`display: block;`可以将其变为块级元素。
+* 在行内元素中用`display: block/inline/block-flex/inline-flex`可以改变其显示类型。
+* CSS替代盒模型
+  * `box-sizing: border-box;` 改变盒模型，使得内边距、边框和内容的宽度计算包含在盒子的宽度中。
+* `display:inline-block;` 使元素具有块级元素的行为，但具有行内元素的宽高属性。
+## 背景与边框
+### 背景
+* `background-color` 设置元素的背景颜色。
+* `background-image` 设置元素的背景图像。
+* `background-repeat`设置背景图像的重复方式。
+  * `no-repeat` 不重复。
+  * `repeat-x` 水平方向重复。
+  * `repeat-y` 垂直方向重复。
+  * `repeat` 水平和垂直方向都重复。
+* `background-size` 设置背景图像的尺寸。
+  * `auto` 保持原图大小。
+  * `cover` 保持背景图像完整覆盖元素。
+  * `contain` 保持背景图像完整包含元素。
+* `background-position` 设置背景图像的位置。它可以使用一到四个值进行定义。  
+  * 如果使用两个非关键字值，第一个值表示水平位置，第二个值表示垂直位置。  
+  * 如果仅指定一个值，则第二个值默认是 center。  
+  * 如果使用三个或四个值，则长度百分比值是前面关键字值的偏移量。  
+  * 用坐标系统定位，方框左上角为`(0,0)`。
+* 渐变背景
+  * `linear-gradient()` 函数用于创建线性渐变。
+  * `radial-gradient()` 函数用于创建放射性渐变。
+  * `repeating-linear-gradient()` 函数用于创建重复的线性渐变。
+  * `repeating-radial-gradient()` 函数用于创建重复的放射性渐变。
+  * `conic-gradient()` 函数用于创建圆锥渐变。
+  * `to` 关键字用于定义渐变的方向。  
+    * 例如：`background: linear-gradient(to bottom, red, blue);`表示从上到下渐变。
+* `background-attachment` 设置背景图像是否随元素内容滚动。
+  * `scroll` 背景图像随元素内容滚动。
+  * `fixed` 背景图像固定。
+  * `local` 背景图像相对于元素定位。
+* `background` 简写属性，用于设置背景颜色、背景图像、背景重复、背景尺寸和背景位置。
+  * background-color 只能在最后一个逗号之后指定。
+background-size 值只能立即包含在 background-position 之后，用“/”字符分隔，例如：center/80%。[更多](https://developer.mozilla.org/zh-CN/docs/Web/CSS/background)
+* 用rgba()函数设置背景颜色的透明度。第四个值表示透明度，取值范围为0~1。
+## 边框
+* `border-radius` 设置元素的圆角半径。
