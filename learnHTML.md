@@ -94,8 +94,7 @@ like
 * 应在`<site>`属性里用URL来只想引用的资源  
 >like  块引用
 ><samp>
-><blockquote
->  cite="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/blockquote">
+><blockquote cite="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/blockquote">
 >  <p>
 >    The <strong>HTML <code>&lt;blockquote&gt;</code> Element</strong> (or
 >    <em>HTML Block Quotation Element</em>) indicates that the enclosed text is an extended quotation.
@@ -256,8 +255,6 @@ like
 * `<source> `元素包含一个 media 属性，这一属性包含一个媒体条件，这些条件决定哪张图片会显示——第一个条件为真的图片会显示。
 * `srcset` 属性包含要显示图片的路径。
 * 在任何情况下，你都必须紧贴着` </picture>` 前面提供一个`<img> `元素以及它的 `src` 和 `alt` 属性，否则不会有图片显示。
-* `<td>`元素创建单元格.
-* `<tr></tr>`元素创建一行。
 ## 表格
 * `<table></table>`中包含表格的所有内容，添加在HTML的`<body>`中。
 * `<tr></tr>`元素创建一行。
