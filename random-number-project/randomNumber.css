@@ -14,6 +14,14 @@ h1{
     text-align: center;
     text-shadow:2px 5px 2px #434141;
 }
+main{
+    position: absolute;
+    width:20em;
+    height: 15em;
+    top: 50%;
+    left: 40%;
+    text-align: center;
+}
 .begin{
     position: absolute;
     top: 7em;
@@ -32,16 +40,12 @@ h1{
     padding: 10px;
     text-align: center;
 }
-main{
-    position: absolute;
-    top: 50%;
-    left: 40%;
-}
 .randomNumber{
     text-align: center;
     box-sizing: inline-block;
     color:transparent;
     font-size:3em;
+    font-weight: bold;
     border:2px solid white;
     border-width:0.1em;
     border-radius: 5px;
@@ -58,11 +62,10 @@ main{
     box-shadow:inset 2px 2px black;
 }
 .confirm{
-    position: absolute;
-    top:45%;
-    left: 35%;
+    position: auto;
+    left: 50%;
     font-size: 20px;
-    border:2px solid #222;
+    border:1px solid #222;
     border-radius: 5px;
     box-shadow: 1px 2px 2px 1px black;
     background:linear-gradient(to bottom right,#eee,#888);
@@ -75,8 +78,11 @@ main{
     box-shadow:inset 1px 2px 2px 1px black;
 }
 .input{
-    position: absolute;
-    left:15%;
-    background:#888;
+    position: auto;
+    background:#e8e8e8;
 }
-
+.output{
+    position: auto;
+    text-align: center;
+    font-size: 20px;
+}

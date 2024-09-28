@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Random Number Generator</title>
+        <style>
+            header{
+                position:absolute;
+                top:0;
+                width: 100%;
+                border-bottom: 7px solid #464646;
+                }
+            h1{
+                position:absolute;
+                top: 1em;
+                left: 40%;
+                font-size: 50px;
+                text-align: center;
+                text-shadow:2px 5px 2px #434141;
+                }
+            main{
+                position: absolute;
+                width:20em;
+                height: 15em;
+                top: 50%;
+                left: 40%;
+                text-align: center;
+                }
+            .begin{
+                position: absolute;
+                top: 7em;
+                left: 50%;
+                font-size: 20px;
+                text-align: center;
+                border-bottom:2px dotted rgb(141, 217, 90);
+                color:rgb(141, 217, 90);
+                }
+            .reset{
+                position: absolute;
+                top: 2em;
+                font-size: 20px;
+                border:5px solid #222;
+                border-radius: 5px;
+                padding: 10px;
+                text-align: center;
+                }
+            .randomNumber{
+                text-align: center;
+                box-sizing: inline-block;
+                color:transparent;
+                font-size:3em;
+                font-weight: bold;
+                border:2px solid white;
+                border-width:0.1em;
+                border-radius: 5px;
+                background: linear-gradient(to right,yellow, red,yellow,red);
+                background-clip:text;
+                }
+            .reset:hover{
+                border-color: blueviolet;
+                background: radial-gradient(white,blueviolet);
+                cursor: pointer;
+                box-shadow:2px 2px black;
+                }
+            .reset:active{
+                box-shadow:inset 2px 2px black;
+                }
+            .confirm{
+                position: auto;
+                left: 50%;
+                font-size: 20px;
+                border:1px solid #222;
+                border-radius: 5px;
+                box-shadow: 1px 2px 2px 1px black;
+                background:linear-gradient(to bottom right,#eee,#888);
+                }
+            .confirm:hover{
+                cursor: pointer;
+                background:linear-gradient(to bottom right,white,grey );
+                }
+            .confirm:active{
+                box-shadow:inset 1px 2px 2px 1px black;
+                }
+            .input{
+                position: auto;
+                background:#e8e8e8;
+                }
+            .output{
+                position: auto;
+                text-align: center;
+                font-size: 20px;
+                }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>随机座号生成器</h1>
+            <p class="begin">默认从1号开始哦！</p>
+            <button class="reset">不服重开！</button>
+        </header>
+        <main>
+            <h2 class="please">请在下方输入最大座号</h2>
+            <input type="number" class="input number"> <br>
+            <button class ="confirm">确认</button>
+            <p class="output">恭喜你<span class="randomNumber">  ?  </span>号同学！</p>
+        </main>
+        <script>
+            let inputNumber = Number(document.querySelector(".input").value);
+        let randomNumber = Math.floor(Math.random() * inputNumber + 1);
+        document.querySelector(".confirm").addEventListener("click", function () {
+            inputNumber = Number(document.querySelector(".input").value);
+            randomNumber = Math.floor(Math.random() * inputNumber + 1);
+            if (randomNumber < 10) {
+                document.querySelector(".randomNumber").textContent = `0${randomNumber}`;
+            } else {
+                document.querySelector(".randomNumber").textContent = randomNumber;
+            }
+            }
+        )
+        //reset
+        document.querySelector(".reset").addEventListener("click", function () {
+            document.querySelector(".randomNumber").textContent = "  ?  ";
+            document.querySelector(".input").textContent = "";
+            });
+        </script>
+    </body>
+</html>
