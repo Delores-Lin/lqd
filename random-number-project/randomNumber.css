@@ -1,0 +1,82 @@
+
+
+header{
+    position:absolute;
+    top:0;
+    width: 100%;
+    border-bottom: 7px solid #464646;
+}
+h1{
+    position:absolute;
+    top: 1em;
+    left: 40%;
+    font-size: 50px;
+    text-align: center;
+    text-shadow:2px 5px 2px #434141;
+}
+.begin{
+    position: absolute;
+    top: 7em;
+    left: 50%;
+    font-size: 20px;
+    text-align: center;
+    border-bottom:2px dotted rgb(141, 217, 90);
+    color:rgb(141, 217, 90);
+}
+.reset{
+    position: absolute;
+    top: 2em;
+    font-size: 20px;
+    border:5px solid #222;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+}
+main{
+    position: absolute;
+    top: 50%;
+    left: 40%;
+}
+.randomNumber{
+    text-align: center;
+    box-sizing: inline-block;
+    color:transparent;
+    font-size:3em;
+    border:2px solid white;
+    border-width:0.1em;
+    border-radius: 5px;
+    background: linear-gradient(to right,yellow, red,yellow,red);
+    background-clip:text;
+}
+.reset:hover{
+    border-color: blueviolet;
+    background: radial-gradient(white,blueviolet);
+    cursor: pointer;
+    box-shadow:2px 2px black;
+}
+.reset:active{
+    box-shadow:inset 2px 2px black;
+}
+.confirm{
+    position: absolute;
+    top:45%;
+    left: 35%;
+    font-size: 20px;
+    border:2px solid #222;
+    border-radius: 5px;
+    box-shadow: 1px 2px 2px 1px black;
+    background:linear-gradient(to bottom right,#eee,#888);
+}
+.confirm:hover{
+    cursor: pointer;
+    background:linear-gradient(to bottom right,white,grey );
+}
+.confirm:active{
+    box-shadow:inset 1px 2px 2px 1px black;
+}
+.input{
+    position: absolute;
+    left:15%;
+    background:#888;
+}
+
