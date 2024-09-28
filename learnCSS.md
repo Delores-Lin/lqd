@@ -236,3 +236,99 @@ background-size 值只能立即包含在 background-position 之后，用“/”
 * 用rgba()函数设置背景颜色的透明度。第四个值表示透明度，取值范围为0~1。
 ## 边框
 * `border-radius` 设置元素的圆角半径。
+## 书写模式
+* `writing-mode`属性用于设置文本的书写方向。
+  * `horizontal-tb` 水平书写模式。
+  * `vertical-rl` 垂直书写模式，从右到左。
+  * `vertical-lr` 垂直书写模式，从左到右。
+* 在切换书写模式的同时，也在高边块和内联文本的方向。块维度指的总是块在页面书写模式下的显示方向。而内联维度指的总是文本方向。
+* 横向书写模式下，映射到`width`的属性被称作内联尺寸（`inline-size`）——内联维度的尺寸。而映射`height`的属性被称为块级尺寸（`block-size`），这是块级维度的尺寸。
+* `margin-top`属性的映射是`margin-block-start`——总是指向块级维度开始处的边距。
+* `padding-left`属性映射到 `padding-inline-start`，这是应用到内联开始方向（这是该书写模式文本开始的地方）上的内边距。
+* `border-bottom`属性映射到的是`border-block-end`，也就是块级维度结尾处的边框。
+* ![横向](https://developer.mozilla.org/zh-CN/docs/Learn/CSS/Building_blocks/Handling_different_text_directions/horizontal-tb.png)
+  ![纵向](https://developer.mozilla.org/zh-CN/docs/Learn/CSS/Building_blocks/Handling_different_text_directions/vertical.png)
+* 一些属性的取值是一些物理值（如`top`、`right`、`bottom`和`left`）。这些值同样拥有逻辑值映射（`block-start`、`inline-end`、`block-end`和`inline-start`）。
+## 溢出
+* `overflow`属性用于控制元素内容溢出元素框时的行为。默认值为`visible`，即内容不会溢出。
+  * `hidden` 内容溢出元素框时隐藏。
+  * `scroll` 内容溢出元素框时显示滚动条。  
+  * `overflow-x` 和 `overflow-y` 属性分别用于控制水平和垂直方向的溢出。
+  * `overflow-auto` 内容溢出时自动显示滚动条。
+## CSS单位
+* CSS有四种基本单位：长度单位、角度单位、时间单位和频率单位。
+### 长度单位
+  * 绝对长度单位：像素（px）***【常用】***、厘米（cm）、英寸（in）、毫米（mm）、点（pt）、分（pc）。
+  * 相对长度单位：  
+    * `em`、`rem`：相对于父元素和根元素的字体大小。
+      * `em`的每一个连续的嵌套层都会不断变大，而`rem`始终不变
+    * `vh`、`vw`：相对于视窗的高度和宽度。
+
+
+* 有些值接受数字，不添加任何单位。接受无单位数字的属性的一个例子是不透明度属性（`opacity`），它控制元素的不透明度（它的透明程度）。此属性接受 0（完全透明）和 1（完全不透明）之间的数字。
+* 使用 RGB 与 alpha 参数的颜色只让你指定的颜色不透明。
+* calc() 函数用于计算表达式的值。
+* 百分比值是相对于父元素的宽度或高度的，而不是视窗的宽度或高度。
+* HSL也用于指定颜色，接受三个值(色调、饱和度、亮度)。第四个值可以是alpha参数指定不透明度，对于旧版本CSS需要使用hsla()函数。
+### 角度单位
+  * `deg` 度，一个完整的圆是`360deg`。
+  * `grad` 百分度，一个完整的圆是`400grad`。
+  * `rad` 弧度，一个完整的圆是2π弧度约等于`6.2832rad`。
+  * `turn` 圆周，一个完整的圆是`1turn`。
+## 图片 媒体 表单
+* `min-`和`max-`属性可以用来限制元素的最小和最大宽度或高度。
+* `object-fit`属性用于控制图片的缩放方式。
+  * `fill` 图片填充元素。(图片可能会变形)
+  * `contain` 图片完全包含元素。(图片不会变形)
+  * `cover` 图片完全覆盖元素。(图片不会变形，但多余的图像内容会被裁剪)
+* 在一些浏览器中，表单元素默认不会继承字体样式。
+* `font-family:inherit;` 继承父元素的字体。
+## 样式化表格
+* `table-layout`属性用于控制表格的布局方式。
+  * `auto` 自动布局，单元格内容根据内容调整大小。
+  * `fixed` 固定布局，单元格大小固定，内容自动换行。（常用，能直观地处理表的内容）
+* `:nth-child()`伪类用于选择特定子元素。
+  * `:nth-child(n)` 选择第n个子元素。
+  * `:nth-child(even)` 选择偶数子元素。
+  * `:nth-child(odd)` 选择奇数子元素。//和偶元素配合可以用来设置表格的斑马条纹。
+  * `:nth-child(n+m)` 选择从第n个子元素开始的第m个子元素。
+  * `:nth-child(-n)` 选择倒数第n个子元素。
+  * `:nth-child(n of selector)` 选择第n个选择器匹配的元素。
+* `border-collapse`属性用于合并相邻边框。
+  * `collapse` 合并相邻边框。
+  * `separate` 不合并相邻边框。
+  * 设置边框时默认有间隔，设置`border-collapse: collapse;`可以合并边框。
+* `caption-side`属性用于设置表格标题的位置。
+  * `top` 标题在表格顶部。
+  * `bottom` 标题在表格底部。
+## 阴影
+* `text-shadow`属性用于设置文本的阴影。
+* `box-shadow`属性用于设置元素的阴影。
+  * `h-shadow` 阴影水平偏移量。
+  * `v-shadow` 阴影垂直偏移量。
+  * `blur-radius` 模糊半径。
+  * `spread-radius` 阴影扩散半径。
+  * `color` 阴影颜色。
+  * `inset` 关键字可以使阴影变成内阴影。(`text-shadow`只能设置外阴影)
+  * 语法：`box-shadow: h-shadow v-shadow blur-radius spread-radius color;`颜色可以放在最开始，也可以放在最后。
+## 滤镜
+* `filter`属性用于设置滤镜。
+  * `blur()` 将高斯模糊应用于元素，单位px。
+  * `brightness()` 调整元素的亮度，0全黑，1原始颜色，大于1增加亮度。
+  * `contrast()` 调整元素的对比度，0为原始对比度，大于1增加对比度。
+  * `drop-shadow()` 沿元素的轮廓生成阴影效果，接受x、y、模糊半径、颜色，但不接受`inset`和`spread`.
+  * `grayscale()` 将元素变成灰度,接受0~1的数值。
+  * `hue-rotate()` 调整元素的色调，接受角度值。
+  * `invert()` 反转元素,接受0~1的数值。
+  * `opacity()` 调整元素的透明度，接受0~1的数值。
+  * `saturate()` 调整元素的饱和度，0为原始饱和度，大于1增加饱和度。
+  * `sepia()` 将元素变成深褐色,接受0~1的数值。
+## 混合模式
+*`background-blend-mode`属性用于设置背景的混合模式。
+* `mix-blend-mode`属性用于设置元素的混合模式。
+## background-clip
+* `background-clip`属性用于设置背景的裁剪方式。
+  * `border-box` 背景延伸至边框外。
+  * `padding-box` 背景延伸至内边距外。
+  * `content-box` 背景延伸至内容区外。
+  * `text` 背景延伸至文本外。需要将color属性设置为transparent。
