@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <script>
+            let number;
+            let input = Number(prompt("Enter a number:"));
+            if(input===1){
+                    alert(input + "不是素数也不是合数");
+                }else if (input===2){
+                    alert(input + "是素数");
+                }else{
+            for (let i = 2;i<input;i++){
+                if(input%i===0){
+                    alert(input + "不是素数");
+                    break;
+                }else if(i===input-1){
+                alert(input + "是素数");
+                break;}
+            }
+        }
+        let result="2";
+        for(let i=3;i<input;i++){
+            for(let j=2;j<=i;j++){
+                if(j===i){
+                    result = result +"," + i;
+                }else if(i%j===0){
+                    break;
+                }
+            }
+        }
+        alert(result);
+        console.log(result);
+    </script>
+    </body>
+</html>
